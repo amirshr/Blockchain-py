@@ -2,9 +2,10 @@ from collections import OrderedDict
 
 
 class Transaction:
-    def __init__(self, sender, recipient, amount):
+    def __init__(self, sender, recipient, signature, amount):
         self.sender = sender
         self.recipient = recipient
+        self.signature = signature
         self.amount = amount
 
     def to_ordered_dict(self):
