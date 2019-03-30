@@ -21,7 +21,7 @@ class Verification:
 
     def checking_transaction(self, transaction, get_balance, check_funds=True):
         if check_funds:
-            return get_balance() >= transaction.amount and self.verify_transaction(transaction)
+            return get_balance(transaction.sender) >= transaction.amount and self.verify_transaction(transaction)
         else:
             return self.verify_transaction(transaction)
 
